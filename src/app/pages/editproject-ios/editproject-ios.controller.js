@@ -51,6 +51,12 @@ class EditProjectIosCtrl {
         this.getProject();
         ProjectStore.subscribeAndInit($scope, ()=> {
             this.project = ProjectStore.getProject();
+
+            //temprary fix for RO-859
+            angular.forEach(angular.element('input'), (val, key) => {
+                angular.element(val).attr('disabled', false)
+            })
+
             console.log('IOS', this.project);
             if (this.project &&
                 this.project.fields && this.project.fields.ios &&
@@ -70,13 +76,13 @@ class EditProjectIosCtrl {
                     if (this.timer) {
                         this._$interval.cancel(this.timer);
                     }
-                    angular.forEach(angular.element('input'), (val, key) =>{
+                    angular.forEach(angular.element('input'), (val, key) => {
                         angular.element(val).attr('disabled', false)
                     })
 
                 }
                 else{
-                    angular.forEach(angular.element('input'), (val, key) =>{
+                    angular.forEach(angular.element('input'), (val, key) => {
                         angular.element(val).attr('disabled', true)
                     })
                 }
@@ -261,7 +267,6 @@ class EditProjectIosCtrl {
         ctrl.showLoader = true;
         this.modals.notPublished = false;
         
-        console.log("--------- main");
         $('#configs').ajaxForm({
             dataType: 'json',
             url: this._AppConstants.API + '/project/' + this.projectId + '/build/ios',
@@ -272,12 +277,17 @@ class EditProjectIosCtrl {
                 project: angular.toJson(project),
             },
             success: function (data) {
-                console.log("------------- success");
                 ctrl.modals.password = false;
                 ctrl._$scope.configs.displayName.focused = false;
                 ctrl._$scope.configs.version.focused = false;
                 ctrl._$scope.configs.bundle.focused = false;
                 ctrl._$scope.configs.developerId.focused = false;
+                ctrl.files.icon.name = '';
+                ctrl.files.icon.src = '';
+                ctrl.files.cert.name == '';
+                ctrl.files.cert.src == '';
+                ctrl.files.profile.name == '';
+                ctrl.files.profile.src == '';
                 ctrl.getProject();
                 ctrl.Notification.success('iOS build start');
                 ctrl.timer = ctrl._$interval(() => {
@@ -287,7 +297,6 @@ class EditProjectIosCtrl {
             },
 
             error: function (data) {
-                console.log("-----------------error");
                 if (data.responseJSON && data.responseJSON.error.message)
                     ctrl.Notification.error(data.responseJSON.error.message);
                 ctrl.showLoader = false;
