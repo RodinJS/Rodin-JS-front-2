@@ -51,6 +51,37 @@ class EditProjectIosCtrl {
         this.getProject();
         ProjectStore.subscribeAndInit($scope, ()=> {
             this.project = ProjectStore.getProject();
+            console.log('IOS', this.project);
+            if (this.project &&
+                this.project.fields && this.project.fields.ios &&
+                (!this.project.ios || Object.keys(this.project.ios).length <= 0 ) && !this.project.build.ios.built) {
+                this.project.ios = {
+                    name: this.project.fields.appName,
+                    version: this.project.fields.version,
+                    bundle: this.project.fields.ios.bundleIdentifier,
+                    developerId: this.project.fields.ios.developerId
+                };
+                this.projectError = this.project.fields.error;
+
+                if (this.projectError) {
+                    this.project.build.ios.requested = false;
+                    this.errorText = '';//`${this._AppConstants.ERRORCODES['OTHERBUILDERROR'].message} ${this.project.fields.buildId}`;
+
+                    if (this.timer) {
+                        this._$interval.cancel(this.timer);
+                    }
+                    angular.forEach(angular.element('input'), (val, key) =>{
+                        angular.element(val).attr('disabled', false)
+                    })
+
+                }
+                else{
+                    angular.forEach(angular.element('input'), (val, key) =>{
+                        angular.element(val).attr('disabled', true)
+                    })
+                }
+
+            }
         });
         $scope.$on('$destroy', ()=>{
             if(this.timer){
@@ -229,6 +260,8 @@ class EditProjectIosCtrl {
 
         ctrl.showLoader = true;
         this.modals.notPublished = false;
+        
+        console.log("--------- main");
         $('#configs').ajaxForm({
             dataType: 'json',
             url: this._AppConstants.API + '/project/' + this.projectId + '/build/ios',
@@ -239,6 +272,7 @@ class EditProjectIosCtrl {
                 project: angular.toJson(project),
             },
             success: function (data) {
+                console.log("------------- success");
                 ctrl.modals.password = false;
                 ctrl._$scope.configs.displayName.focused = false;
                 ctrl._$scope.configs.version.focused = false;
@@ -253,6 +287,7 @@ class EditProjectIosCtrl {
             },
 
             error: function (data) {
+                console.log("-----------------error");
                 if (data.responseJSON && data.responseJSON.error.message)
                     ctrl.Notification.error(data.responseJSON.error.message);
                 ctrl.showLoader = false;
