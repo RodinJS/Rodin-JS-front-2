@@ -277,7 +277,7 @@
                                     <div class="image"></div>
                                 </div>
                                 <div class="main-upload-area "
-                                     data-ng-if="$ctrl.project.build.android.built">
+                                     data-ng-if="$ctrl.project.build.ios.built">
                                     <div class="download-build">
                                         <div class="dashed-bord">
                                             <img src="images/general/file_icon_placeholder.png" alt="" width="60"
@@ -297,7 +297,7 @@
                                     <!--type="button" class="btn btn-primary"-->
                                     <!--ng-click="$ctrl.download()">download-->
                                     <!--</button>-->
-                                    <a data-ng-click="$ctrl.cancelBuild($event)" data-ng-if="!$ctrl.project.build.ios.built" class="btn btn-save">cancel</a>
+                                    <a data-ng-click="$ctrl.cancelBuild($event)" data-ng-if="!$ctrl.project.build.ios.built" class="btn btn-save">Cancel</a>
                                 </div>
                             </div>
                         </div>
@@ -308,16 +308,42 @@
         </div>
     </div>
 </div>
+<div class="modal model-confirm publish-modal" close-modal="notPublished"
+     ng-class="{'display-block': $ctrl.modals.notPublished, 'display-none': !$ctrl.modals.notPublished}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <!--<span class="close" data-ng-click="$ctrl.modals.remove = false">×</span>-->
+            <p>Warning</p>
+        </div>
+        <div class="modal-body padding-0-important">
+            <p class="description word-wrap">
+                To build your project you need to publish it first.
+            </p>
+        </div>
+        <div class="modal-footer">
+            <div class="required-field-actions clearfix">
+                <div class="text-center">
+ <button type="button" class="btn btn-positive" ng-click="$ctrl.publishNbuild($event)">Publish & Build
+                    </button>
+                    <button type="button" class="btn btn-positive"
+                            ng-click="$ctrl.gotToPublish()">Publish Project
+                    </button>
+                    <a href="" class="btn btn-cancel" data-ng-click="$ctrl.modals.notPublished = false">Cancel</a>
 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="modal" close-modal="password"  ng-class="{'display-block': $ctrl.modals.password, 'display-none': !$ctrl.modals.password}">
     <div class="modal-content">
         <div class="modal-header">
             <p>Certificate Password</p>
         </div>
         <div class="modal-body padding-0-important">
-            <p class="description text-small">Certificate password when u generate the app</p>
+            <p class="description text-small">Certificate password when you generate the app</p>
             <form name="password">
-                <div class="form-wrapper margin-top-20">
+                <div class="form-wrapper">
                     <div class="form-group"
                          data-ng-class="{'has-error': password.certPassword.$invalid && password.certPassword.focused, 'has-success': password.certPassword.$valid && password.certPassword.focused}">
                         <input type="password" class="form-control" placeholder="Certificate Password"
@@ -334,9 +360,9 @@
                 <div class="text-center">
                     <button type="submit" class="btn btn-positive"
                             data-ng-disabled="!password.$valid"
-                            data-ng-click="$ctrl.build()">build</button>
+                            data-ng-click="$ctrl.build($event)">Build</button>
                     <a href="" class="btn btn-cancel"
-                       data-ng-click="$ctrl.modals.password = false">cancel</a>
+                       data-ng-click="$ctrl.modals.password = false">Cancel</a>
                 </div>
             </div>
         </div>
