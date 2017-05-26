@@ -25,7 +25,9 @@ function ProjectStore(EventBus, BaseStore, $stateParams, $state, Project) {
                 });
         }
 
-        return angular.copy(factory.data.project);
+        const project = angular.copy(factory.data.project);
+        delete factory.data.project;       
+        return project;
     };
 
     return factory;
