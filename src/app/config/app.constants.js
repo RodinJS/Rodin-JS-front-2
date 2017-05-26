@@ -244,10 +244,6 @@ const AppConstants = {
             message: 'UNKNOWN_SOCKET_ACTION',
             field: '',
         },
-<<<<<<< HEAD
-
-=======
->>>>>>> 5a04022087e9c4c92efd37426e551f7240dc7b74
         // FILEREADERR: {
         //     message: `Build failed. Please drop an email to support including your build ID`,
         // },

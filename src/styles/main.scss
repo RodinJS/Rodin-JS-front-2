@@ -82,10 +82,10 @@ body{
 @import "docs";
 @import "scroller";
 @import "loader";
-@import "forms";
+// @import "forms";
 @import "../../src/app/pages/auth/auth";
 @import "../../src/app/pages/faq/faq";
-@import "../../src/app/pages/about/about";
+// @import "../../src/app/pages/about/about";
 @import "../../src/app/layout/header";
 @import "../../src/app/layout/footer";
 @import "../../src/app/pages/contacts/contacts";
@@ -140,4 +140,6 @@ body{
       font-size: 11px 12px;
     }
   }
+}
+}
 }
