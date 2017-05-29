@@ -9,22 +9,30 @@ class ResetPasswordCtrl {
         this.appName = AppConstants.appName;
         this.User = User;
         this.$stateParams = $stateParams;
+        this.loaded = false;
 
         if (this.User.current) {
             return $state.go('app.dashboard');
         }
 
         if ($stateParams.t) {
-            this.User.validateChangePasswordToken($stateParams.t)
-                .then(
-                    response => {
-                        if(response.tokenUsed) return this.tokenUsed = true;
-                        this.newPasswordMode = true;
-                    },
-                    err => {
-                        console.log(err);
-                    })
-        }
+                    this.User.validateChangePasswordToken($stateParams.t)
+                        .then(
+                            response => {
+                                this.loaded = true;
+                                if(response.tokenUsed) {
+                                    return this.tokenUsed = true;
+                                }
+                                this.newPasswordMode = true;
+                            },
+                            err => {
+                                this.loaded = true;
+                                console.log(err);
+                            })
+                }
+                else{
+                    this.loaded = true;
+                }
 
 
     }
