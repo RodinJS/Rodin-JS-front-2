@@ -33,6 +33,8 @@ import './editproject-ios/index';
 
 import './editproject-android/index';
 
+import './editproject-daydream/index';
+
 import './editproject-oculus/index';
 
 import './editproject-vive/index';
@@ -93,6 +95,7 @@ let pagesModule = angular.module('app.pages', [
     'app.editporjectIos',
     'app.editporjectModules',
     'app.editprojectAndroid',
+    'app.editprojectDaydream',
     'app.editporjectOculus',
     'app.editporjectVive',
     'app.editporjectWeb',
