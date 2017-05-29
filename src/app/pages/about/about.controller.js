@@ -6,64 +6,64 @@ class AboutCtrl {
             [{
                     name: 'Albert Poghosyan',
                     img: '../../../images/about/abo.png',
-                    position: 'BO'
+                    position: 'COO'
                 },
                 {
                     name: 'Aram Avetisyan',
                     img: '../../../images/about/aram.png',
-                    position: 'Vojd'
+                    position: 'CTO'
                 },
                 {
                     name: 'Grigor Khachatryan',
                     img: '../../../images/about/grig.png',
-                    position: 'Shaman'
+                    position: 'Development Team Lead'
                 },
                 {
                     name: 'Mariam Adamyan',
                     img: '../../../images/about/mariam.png',
-                    position: '#ZVUKAVIK'
+                    position: 'Quality Assurance'
                 }
             ],
             [{
                     name: 'Lusine Kuchukyan',
                     img: '../../../images/about/lusine.png',
-                    position: 'Kamandir'
+                    position: 'Product Owner'
                 },
                 {
                     name: 'Khachatur Gharibyan',
                     img: '../../../images/about/khcho.png',
-                    position: 'Ninja'
+                    position: 'Developer'
                 },
                 {
                     name: 'Khatchadour Israelyan',
                     img: '../../../images/about/khatchadour.png',
-                    position: 'ISO'
+                    position: 'Designer'
                 },
                 {
                     name: 'Christina Karapetyan',
                     img: '../../../images/about/cristina.png',
-                    position: 'Pahestapet'
+                    position: 'Developer'
                 },
             ],
             [{
                     name: 'Mher Simonyan',
                     img: '../../../images/about/mher.png',
-                    position: 'Minion'
+                    position: 'Quality Assurance'
                 },
                 {
                     name: 'Gor Matevosyan',
                     img: '../../../images/about/gor.png',
-                    position: 'Steven Hawking'
+                    position: 'Developer'
                 },
                 {
                     name: 'Raffi Hovhannisyan',
                     img: '../../../images/about/raffi.png',
-                    position: '1px Armenia: Badasxan'
+                    position: 'Developer'
                 },
                 {
                     name: 'Sergey Hovakimyan',
                     img: '../../../images/about/serg.png',
-                    position: 'UXT'
+                    position: 'Developer'
                 },
             ]
         ];
