@@ -46,11 +46,11 @@ function editorNavigationCtrl($scope, $state, $stateParams) {
       title: 'Android',
       url: 'app.editprojectAndroid',
     },    
-    daydream: {
-      active: false,
-      title: 'Daydream',
-      url: 'app.editprojectDaydream',
-    },
+    // daydream: {
+    //   active: false,
+    //   title: 'Daydream',
+    //   url: 'app.editprojectDaydream',
+    // },
     oculus: {
       active: false,
       title: 'Oculus',
