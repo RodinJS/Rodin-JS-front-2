@@ -294,6 +294,9 @@ class EditProjectIosCtrl {
                 ctrl.files.icon.src = '';
                 ctrl.files.cert.name = '';
                 ctrl.files.profile.name = '';
+                ctrl.Project.cleanInputFiles('#profile-file');
+                ctrl.Project.cleanInputFiles('#cert-file');
+                ctrl.Project.cleanInputFiles('#icon-file');
                 ctrl.getProject();
                 ctrl.Notification.success('iOS build start');
                 ctrl.timer = ctrl._$interval(() => {
