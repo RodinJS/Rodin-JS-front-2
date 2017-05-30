@@ -269,6 +269,7 @@ class EditProjectAndroidCtrl {
                 ctrl._$scope.configs.KSAlias.focused = false;
                 ctrl.files.icon.name = '';
                 ctrl.files.icon.src = '';
+                ctrl.Project.cleanInputFiles('#icon-file');
                 ctrl.getProject();
                 ctrl._$scope.$apply();
                 ctrl.Notification.success('Android build start');

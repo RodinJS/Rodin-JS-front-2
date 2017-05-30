@@ -124,6 +124,10 @@ class Project {
         this._Projects.one(projectId).one('download').one(target).customGET().then(Analyser.resolve, Analyser.reject);
         return Analyser.promise;
     }
+
+    cleanInputFiles(inputName){
+        angular.element(inputName).val(null);
+    }
 }
 
 export default Project;
