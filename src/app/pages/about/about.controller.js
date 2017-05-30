@@ -21,7 +21,7 @@ class AboutCtrl {
                 {
                     name: 'Mariam Adamyan',
                     img: '../../../images/about/mariam.png',
-                    position: 'Quality Assurance'
+                    position: 'QA Engineer'
                 }
             ],
             [{
@@ -32,7 +32,7 @@ class AboutCtrl {
                 {
                     name: 'Khachatur Gharibyan',
                     img: '../../../images/about/khcho.png',
-                    position: 'Developer'
+                    position: 'Software Engineer'
                 },
                 {
                     name: 'Khatchadour Israelyan',
@@ -42,28 +42,28 @@ class AboutCtrl {
                 {
                     name: 'Christina Karapetyan',
                     img: '../../../images/about/cristina.png',
-                    position: 'Developer'
+                    position: 'Software Engineer'
                 },
             ],
             [{
                     name: 'Mher Simonyan',
                     img: '../../../images/about/mher.png',
-                    position: 'Quality Assurance'
+                    position: 'QA Engineer'
                 },
                 {
                     name: 'Gor Matevosyan',
                     img: '../../../images/about/gor.png',
-                    position: 'Developer'
+                    position: 'Software Engineer'
                 },
                 {
                     name: 'Raffi Hovhannisyan',
                     img: '../../../images/about/raffi.png',
-                    position: 'Developer'
+                    position: 'Software Engineer'
                 },
                 {
                     name: 'Sergey Hovakimyan',
                     img: '../../../images/about/serg.png',
-                    position: 'Developer'
+                    position: 'Software Engineer'
                 },
             ]
         ];
