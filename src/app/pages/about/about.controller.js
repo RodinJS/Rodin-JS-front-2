@@ -4,6 +4,10 @@ class AboutCtrl {
 
         this.team = [
             [{
+                    name: 'Taron Lizagub',
+                    img: '../../../images/about/taron.png',
+                    position: 'CEO'
+                },{
                     name: 'Albert Poghosyan',
                     img: '../../../images/about/abo.png',
                     position: 'COO'
@@ -18,13 +22,14 @@ class AboutCtrl {
                     img: '../../../images/about/grig.png',
                     position: 'Development Team Lead'
                 },
+                ],
+            [
                 {
                     name: 'Mariam Adamyan',
                     img: '../../../images/about/mariam.png',
                     position: 'QA Engineer'
-                }
-            ],
-            [{
+                },
+                {
                     name: 'Lusine Kuchukyan',
                     img: '../../../images/about/lusine.png',
                     position: 'Product Owner'
@@ -38,14 +43,15 @@ class AboutCtrl {
                     name: 'Khatchadour Israelyan',
                     img: '../../../images/about/khatchadour.png',
                     position: 'Designer'
-                },
+                }
+            ],
+            [
                 {
                     name: 'Christina Karapetyan',
                     img: '../../../images/about/cristina.png',
                     position: 'Software Engineer'
                 },
-            ],
-            [{
+                {
                     name: 'Mher Simonyan',
                     img: '../../../images/about/mher.png',
                     position: 'QA Engineer'
@@ -60,6 +66,8 @@ class AboutCtrl {
                     img: '../../../images/about/raffi.png',
                     position: 'Software Engineer'
                 },
+            ],
+            [
                 {
                     name: 'Sergey Hovakimyan',
                     img: '../../../images/about/serg.png',
